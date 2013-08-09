@@ -21,56 +21,44 @@
 
 package org.ajax4jsf.builder.velocity;
 
-import java.io.InputStream;
-
 import org.apache.commons.collections.ExtendedProperties;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.apache.velocity.runtime.resource.Resource;
 
+import java.io.InputStream;
+
 /**
  * @author Maksim Kaszynski
- *
  */
-public class ResourceLoader extends
-		org.apache.velocity.runtime.resource.loader.ResourceLoader {
+public class ResourceLoader extends org.apache.velocity.runtime.resource.loader.ResourceLoader {
 
-    public void init( ExtendedProperties configuration)
-    {
+    public void init(ExtendedProperties configuration) {
         rsvc.info("ClasspathResourceLoader : initialization starting.");
-
         rsvc.info("ClasspathResourceLoader : initialization complete.");
     }
 
-    public synchronized InputStream getResourceStream( String name )
-        throws ResourceNotFoundException
-    {
-        InputStream result = null;
-        
-        if (name == null || name.length() == 0)
-        {
-            throw new ResourceNotFoundException ("No template name provided");
-        }
-        
-        try 
-        {
-            ClassLoader classLoader = getClass().getClassLoader();
+    public synchronized InputStream getResourceStream(String name)
+            throws ResourceNotFoundException {
 
-            result= classLoader.getResourceAsStream( name );
+        if (name == null || name.length() == 0) {
+            throw new ResourceNotFoundException("No template name provided");
         }
-        catch( Exception fnfe )
-        {
-            throw new ResourceNotFoundException( fnfe.getMessage() );
+
+        final InputStream result;
+        try {
+            result = ResourceLoader.class.getResourceAsStream(name);
+        } catch (Exception fnfe) {
+            throw new ResourceNotFoundException(fnfe.getMessage());
         }
-        
+
         return result;
     }
-    
-    public boolean isSourceModified(Resource resource)
-    {
+
+    public boolean isSourceModified(Resource resource) {
         return false;
     }
 
-    public long getLastModified(Resource resource)
-    {
+    public long getLastModified(Resource resource) {
         return 0;
-    }}
+    }
+}
