@@ -4,7 +4,7 @@
 	<artifactId>root</artifactId>
 	<packaging>pom</packaging>
 	<name>RichFaces project</name>
-	<version>3.3.4-SNAPSHOT</version>
+	<version>3.3.4.Brite</version>
   <description>RichFaces project root</description>
 	<url>http://labs.jboss.com/jbossrichfaces</url>
 	<dependencies />

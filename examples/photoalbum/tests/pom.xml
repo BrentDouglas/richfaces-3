@@ -3,7 +3,7 @@
 	<parent>
        <groupId>org.richfaces.examples</groupId>
 		<artifactId>photoalbum-root</artifactId>
-        <version>3.3.4-SNAPSHOT</version>
+        <version>3.3.4.Brite</version>
     </parent>
 
     <groupId>org.richfaces.examples</groupId>

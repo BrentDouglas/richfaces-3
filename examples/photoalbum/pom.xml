@@ -4,7 +4,7 @@
     <groupId>org.richfaces.examples</groupId>
     <artifactId>photoalbum-root</artifactId>
     <packaging>pom</packaging>
-    <version>3.3.4-SNAPSHOT</version>
+    <version>3.3.4.Brite</version>
  	<name>Photoalbum Demo Application Root</name>
   <description>Photoalbum Demo Application Root</description>
   <url>http://labs.jboss.com/jbossrichfaces</url>
